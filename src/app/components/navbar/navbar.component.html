@@ -1,0 +1,20 @@
+
+  <mat-toolbar class="barra" >
+    <div>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Auth0</span>
+      <span class="example-spacer"></span>
+    </div>
+
+    <div>
+      <a mat-button [routerLink]="[ 'home']">Home</a>
+      <a mat-button [routerLink]="[ 'precios']">Precios</a>
+      <a *ngIf="auth.isAuthenticated$ | async; else loggedOut" mat-button [routerLink]="[ 'protegida']">Protegida</a>
+    </div>
+    <div>
+      <app-auth-button></app-auth-button>
+    </div>
+  </mat-toolbar>
+  
